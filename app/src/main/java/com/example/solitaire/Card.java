@@ -2,20 +2,22 @@ package com.example.solitaire;
 
 public class Card {
 
-    public final static int SPADES = 0;   // Codes for the 4 suits, plus Joker.
-    public final static int HEARTS = 1;
-    public final static int DIAMONDS = 2;
-    public final static int CLUBS = 3;
-    public final static int JOKER = 4;
+    private final static int SPADES = 0;   // Codes for the 4 suits, plus Joker.
+    private final static int HEARTS = 1;
+    private final static int DIAMONDS = 2;
+    private final static int CLUBS = 3;
+    private final static int JOKER = 4;
 
     public final static int ACE = 1;      // Codes for the non-numeric cards.
     public final static int JACK = 11;    //   Cards 2 through 10 have their
     public final static int QUEEN = 12;   //   numerical values for their codes.
     public final static int KING = 13;
 
-    public boolean inStack = false;
-    public boolean isFlipped = false;
-    public boolean canMove = false;
+    private boolean inStack = false;
+    private boolean isFaceUp = false;
+    private boolean canMove = false;
+
+    private String img = "";
 
     /**
      * This card's suit, one of the constants SPADES, HEARTS, DIAMONDS,
@@ -143,7 +145,7 @@ public class Card {
     }
 
     public boolean CheckIsFlipped(){
-        return isFlipped;
+        return isFaceUp;
     }
 
     public boolean CheckInStack(){
@@ -161,6 +163,12 @@ public class Card {
     public void dropInFinalLocation(){
         inStack = true;
         canMove = false;
+    }
+
+    public void flipCard(){
+        inStack = false;
+        canMove = true;
+        isFaceUp = true;
     }
 
 
