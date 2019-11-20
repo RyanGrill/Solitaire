@@ -1,7 +1,6 @@
 package com.example.solitaire;
 
-public class Card
-{
+public class Card {
 
     public final static int SPADES = 0;   // Codes for the 4 suits, plus Joker.
     public final static int HEARTS = 1;
@@ -15,6 +14,7 @@ public class Card
     public final static int KING = 13;
 
     public boolean inStack = false;
+    public boolean isFlipped = false;
     public boolean canMove = false;
 
     /**
@@ -36,17 +36,15 @@ public class Card
      * Creates a Joker, with 1 as the associated value.  (Note that
      * "new Card()" is equivalent to "new Card(0, Card.JOKER)".)
      */
-    public Card()
-    {
+    public Card() {
         suit = JOKER;
         value = 0;
     }
 
     /**
      * Creates a card with a specified suit and value.
-     * **/
-    public Card(int val, int suit)
-    {
+     **/
+    public Card(int val, int suit) {
         if (suit != SPADES && suit != HEARTS && suit != DIAMONDS &&
                 suit != CLUBS && suit != JOKER)
             throw new IllegalArgumentException("Illegal playing card suit");
@@ -59,86 +57,112 @@ public class Card
     /**
      * Returns the suit of this card.
      */
-    public int getSuit()
-    {
+    public int getSuit() {
         return suit;
     }
 
     /**
      * Returns the value of this card.
-     * @return the value, which is one of the numbers 1 through 13, inclusive for
-     * a regular card, and which can be any value for a Joker.
      */
-    public int getValue()
-    {
+    public int getValue() {
         return value;
     }
 
     /**
      * Returns a String representation of the card's suit.
-     * @return one of the strings "Spades", "Hearts", "Diamonds", "Clubs"
-     * or "Joker".
      */
-    public String getSuitAsString()
-    {
-        switch ( suit )
-        {
-            case SPADES:   return "Spades";
-            case HEARTS:   return "Hearts";
-            case DIAMONDS: return "Diamonds";
-            case CLUBS:    return "Clubs";
-            default:       return "Joker";
+    public String getSuitAsString() {
+        switch (suit) {
+            case SPADES:
+                return "Spades";
+            case HEARTS:
+                return "Hearts";
+            case DIAMONDS:
+                return "Diamonds";
+            case CLUBS:
+                return "Clubs";
+            default:
+                return "Joker";
         }
     }
 
     /**
      * Returns a String representation of the card's value.
-     * @return for a regular card, one of the strings "Ace", "2",
-     * "3", ..., "10", "Jack", "Queen", or "King".  For a Joker, the
-     * string is always numerical.
      */
-    public String getValueAsString()
-    {
+    public String getValueAsString() {
         if (suit == JOKER)
             return "" + value;
-        else
-        {
-            switch ( value )
-            {
-                case 1:   return "Ace";
-                case 2:   return "2";
-                case 3:   return "3";
-                case 4:   return "4";
-                case 5:   return "5";
-                case 6:   return "6";
-                case 7:   return "7";
-                case 8:   return "8";
-                case 9:   return "9";
-                case 10:  return "10";
-                case 11:  return "Jack";
-                case 12:  return "Queen";
-                default:  return "King";
+        else {
+            switch (value) {
+                case 1:
+                    return "Ace";
+                case 2:
+                    return "2";
+                case 3:
+                    return "3";
+                case 4:
+                    return "4";
+                case 5:
+                    return "5";
+                case 6:
+                    return "6";
+                case 7:
+                    return "7";
+                case 8:
+                    return "8";
+                case 9:
+                    return "9";
+                case 10:
+                    return "10";
+                case 11:
+                    return "Jack";
+                case 12:
+                    return "Queen";
+                default:
+                    return "King";
             }
         }
     }
 
     /**
      * Returns a string representation of this card, including both
-     * its suit and its value (except that for a Joker with value 1,
-     * the return value is just "Joker").  Sample return values
-     * are: "Queen of Hearts", "10 of Diamonds", "Ace of Spades",
-     * "Joker", "Joker #2"
+     * its suit and its value
      */
-    public String toString()
-    {
-        if (suit == JOKER)
-        {
+    public String toString() {
+        if (suit == JOKER) {
             if (value == 0)
                 return "Joker";
             else
                 return "Joker #" + value;
-        }
-        else
+        } else
             return getValueAsString() + " of " + getSuitAsString();
     }
+
+    public boolean CheckIfMovable() {
+        return canMove;
+    }
+
+    public boolean CheckIsFlipped(){
+        return isFlipped;
+    }
+
+    public boolean CheckInStack(){
+        return inStack;
+    }
+
+    public void putInStack(){
+        inStack = true;
+    }
+
+    public void removeFromStack(){
+        inStack = false;
+    }
+
+    public void dropInFinalLocation(){
+        inStack = true;
+        canMove = false;
+    }
+
+
+
 }
