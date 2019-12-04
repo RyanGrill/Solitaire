@@ -28,5 +28,4 @@ class Foundation(val suit: String)
         return false
     }
 
-
 }

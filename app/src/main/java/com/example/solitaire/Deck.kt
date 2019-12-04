@@ -15,9 +15,9 @@ class Deck {
     })
     var inDeckCards = cards.toMutableList()
 
-    fun drawCard()
+    fun drawCard(): Card
     {
-        inDeckCards.removeAt(0)
+        return inDeckCards.removeAt(0)
     }
 
     fun restart()

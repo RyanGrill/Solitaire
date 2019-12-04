@@ -10,7 +10,81 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau1"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                </android.widget.LinearLayout>
+
+                
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau2"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        app:layout_constraintLeft_toRightOf="@+id/tableau1"
+                        app:layout_constraintTop_toTopOf="parent">
+                </android.widget.LinearLayout>
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau3"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        app:layout_constraintLeft_toRightOf="@+id/tableau2"
+                        app:layout_constraintTop_toTopOf="parent" >
+                </android.widget.LinearLayout>
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau4"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        app:layout_constraintLeft_toRightOf="@+id/tableau3"
+                        app:layout_constraintTop_toTopOf="parent">
+                </android.widget.LinearLayout>
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau5"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        app:layout_constraintLeft_toRightOf="@+id/tableau4"
+                        app:layout_constraintTop_toTopOf="parent">
+                </android.widget.LinearLayout>
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau6"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@+id/tableau5"
+                        app:layout_constraintTop_toTopOf="parent">
+                </android.widget.LinearLayout>
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau7"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@+id/tableau6"
+                        app:layout_constraintTop_toTopOf="parent">
+                </android.widget.LinearLayout>
+
+                <android.widget.LinearLayout
+                        android:id="@+id/tableau8"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/tableau7"
+                        app:layout_constraintTop_toTopOf="parent">
+                </android.widget.LinearLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
