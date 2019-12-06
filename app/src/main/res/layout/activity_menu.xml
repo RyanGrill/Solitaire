@@ -29,6 +29,7 @@
                 android:layout_width="162dp"
                 android:layout_height="86dp"
                 android:layout_marginBottom="16dp"
+                android:onClick="startGame"
                 android:text="Start New Game"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/button"
@@ -50,16 +51,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-                android:id="@+id/button4"
+                android:id="@+id/resumeButton"
                 android:layout_width="162dp"
                 android:layout_height="86dp"
                 android:layout_marginTop="16dp"
-                android:text="Button"
+                android:onClick="goBack"
+                android:text="Back To Game"
                 android:textSize="24sp"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button"
-                tools:text="Back To Game" />
+                app:layout_constraintTop_toBottomOf="@+id/button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

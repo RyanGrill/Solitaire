@@ -1,5 +1,7 @@
 package com.example.solitaire
 
+import android.view.View
+
 object GameModel
 {
     val wastePile : MutableList<Card> = mutableListOf()
@@ -49,6 +51,7 @@ object GameModel
         foundationPiles.forEach {
             if(it.addCard(card)) {
                 return true
+
             }
         }
 
